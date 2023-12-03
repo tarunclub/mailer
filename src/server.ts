@@ -9,13 +9,14 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(expressFileUpload());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes
 import paymentRoute from './routes/payment.route';
 app.use('/api', paymentRoute);
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.json({ message: 'Hello World' });
 });
 
 app.listen(process.env.PORT, () => {

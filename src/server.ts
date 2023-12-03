@@ -10,7 +10,13 @@ const app = express();
 app.use(express.json());
 app.use(expressFileUpload());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      'https://mailer-iw7k.onrender.com/api/payment, http://localhost:3000/api/payment',
+    optionsSuccessStatus: 200,
+  })
+);
 
 // Routes
 import paymentRoute from './routes/payment.route';

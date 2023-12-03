@@ -12,8 +12,7 @@ app.use(expressFileUpload());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin:
-      'https://mailer-iw7k.onrender.com/api/payment, http://localhost:5173/api/payment',
+    origin: '*',
     optionsSuccessStatus: 200,
   })
 );

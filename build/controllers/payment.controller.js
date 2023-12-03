@@ -117,7 +117,7 @@ const sendPaymentEmail = (req, res) => __awaiter(void 0, void 0, void 0, functio
             attachments: [{ filename: pdfFileName, content: pdfBuffer }],
         };
         const info = yield transporter.sendMail(message);
-        res.status(200).json({ message: 'Email has been sent' });
+        res.status(200).json({ message: 'Email has been sent', info });
     }
     catch (error) {
         res.status(500).json({ message: error.message });

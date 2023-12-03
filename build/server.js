@@ -16,6 +16,9 @@ app.use((0, cors_1.default)());
 // Routes
 const payment_route_1 = __importDefault(require("./routes/payment.route"));
 app.use('/api', payment_route_1.default);
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
 });
